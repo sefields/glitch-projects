@@ -1,6 +1,6 @@
 # Timestamp Microservice
 ### by Sam
-### Accepts arguments in two formats: either Unix time or a "natural language date". 
+### Accepts parameters in two formats: either Unix time or a "natural language date". 
 
 ### Returns object with two fields, "unix" and "natural", that reflect the input. 
 
