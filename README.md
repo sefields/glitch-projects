@@ -1,4 +1,4 @@
-# Timestamp Microservice
+# Timestamp Microservice (https://sam-timestamp-microserv.glitch.me/)
 ### by Sam
 ### Accepts parameters in two formats: either Unix time or a "natural language date". 
 
@@ -21,11 +21,11 @@
 
 > #### Both these snippets would print the same object:
 
-> {unix: 1484870400, natural: "January 20, 2017"}
+> `{unix: 1484870400, natural: "January 20, 2017"}`
 
 > #### An invalid input returns the following:
 
-> {unix: null, natural: null}
+> `{unix: null, natural: null}`
 
 ### Demo
 
