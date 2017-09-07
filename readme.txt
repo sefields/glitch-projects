@@ -1,5 +1,0 @@
-HellO!
-
-Goodbye!
-
-Hello again!
