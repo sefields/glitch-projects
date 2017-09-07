@@ -1,5 +1,5 @@
 # Timestamp Microservice
-### (https://sam-timestamp-microserv.glitch.me/)
+### Endpoint: https://sam-timestamp-microserv.glitch.me/
 ### by Sam
 ### Accepts parameters in two formats: either Unix time or a "natural language date". 
 
