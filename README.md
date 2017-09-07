@@ -8,16 +8,16 @@
 
 > #### Unix Time as parameter
 
-> $.getJSON('https://sam-timestamp-microserv.glitch.me/**1484870400**', function(data) {
+> `$.getJSON('https://sam-timestamp-microserv.glitch.me/1484870400', function(data) {
   console.log(data);
-});
+});`
    
 
 > #### Natural Language date as parameter
 
-> $.getJSON('https://sam-timestamp-microserv.glitch.me/**January 20, 2017**', function(data) {
+> `$.getJSON('https://sam-timestamp-microserv.glitch.me/January 20, 2017', function(data) {
   console.log(data);
-});
+});`
 
 > #### Both these snippets would print the same object:
 
