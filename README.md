@@ -13,7 +13,6 @@
   console.log(data);
 });`
    
-
 > #### Natural Language date as parameter
 
 > `$.getJSON('https://sam-timestamp-microserv.glitch.me/January 20, 2017', function(data) {
