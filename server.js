@@ -9,7 +9,7 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 var strftime = require('strftime');
-var nld_to_unix = require('./nld_to_unix.js');
+var convert_logic = require('./convert_logic.js');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -45,33 +45,11 @@ app.route('/')
     })
 
 //  Grab a param if it's given
+//  MY MIDDLEWARE
 app.route('/:date')
   .get(function(req, res) {
-  
     var dateArg = req.params.date;
-  
-    var resultObj = {
-      unix: null, 
-      natural: null
-    }
-    
-    var natDateExp = /\b[A-z]{3,9}\b [0-9]{1,2}, [0-9]{4}/; //RegEx for a natural date format
-    
-    var unixDate = parseInt(dateArg); // Attempt to convert input to an integer
-  
-    //  If it worked, we assume it's in Unix time
-    if (!isNaN(unixDate)) {
-      resultObj.unix = unixDate;
-      resultObj.natural = strftime('%B %d, %Y', new Date(unixDate*1000));
-      res.send(JSON.stringify(resultObj));
-    }
-    //  Otherwise, check if input is a natural date using regex
-    else if (natDateExp.test(dateArg)) {
-      resultObj.unix = nld_to_unix.doConvert(dateArg);
-      resultObj.natural = dateArg;
-      res.send(JSON.stringify(resultObj));
-    }
-    //  If neither of the above worked, just return the original (null) object
+    var resultObj = convert_logic.doConvert(dateArg);
     res.send(JSON.stringify(resultObj));
 });
 
